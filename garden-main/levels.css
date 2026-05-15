@@ -106,12 +106,16 @@
   }
 }
 
-/* #level-7 {
+#level-6 {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
- 
 
-  grid-template-areas: "a b c d e";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    "e e e e e"
+    "b a a a c"
+    /* "b a a a c" */
+    "d d d d d";
 
   .peas {
     grid-area: a;
@@ -128,12 +132,14 @@
   .carrots {
     grid-area: e;
   }
-} */
+}
+
 #level-7 {
   display: grid;
 
   grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "a b c d e";
+  grid-auto-columns: minmax(5ch, 1fr);
+  /* grid-template-areas: "a b c d e"; */
 
   /* .peas {
     grid-area: a;
@@ -150,4 +156,10 @@
   .carrots {
     grid-area: e;
   } */
+}
+
+#level-8 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15ch, auto));
+  grid-auto-rows: 5ch;
 }
